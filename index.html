@@ -4,25 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="flex justify-center items-center flex-col min-h-screen">
-        <div class="flex shadow flex-col p-6 rounded-lg p-32 border border-gray-600 ">
-        <h1 class="pb-8 ml-16 text-2xl font-bold text-black">Sign up</h1>
+        <div class="flex shadow flex-col p-6 rounded-lg p-32 border border-gray-600">
+            <h1 class="pb-8 ml-16 text-2xl font-bold text-black">Sign up</h1>
 
-        <input type="name" placeholder="name" class="py-1 px-4 border border-gray-600 focus:outline-none rounded-md mb-5" id="name" required="">
+            <input type="text" placeholder="Name" class="py-1 px-4 border border-gray-600 focus:outline-none rounded-md mb-5" id="name" required>
 
-            <input type="email" placeholder="name@gmail.com" class="py-1 px-4 border border-gray-600 focus:outline-none rounded-md mb-5 " id="login" required="" >
+            <input type="email" placeholder="name@gmail.com" class="py-1 px-4 border border-gray-600 focus:outline-none rounded-md mb-5" id="email" required>
 
-            <input type="password" placeholder="Enter password........." class="py-1 px-4 border border-gray-600 focus:outline-none rounded-md " id="password" required="">
+            <input type="password" placeholder="Enter password..." class="py-1 px-4 border border-gray-600 focus:outline-none rounded-md" id="password" required>
 
-            <p class="text-sm text-black pt-2">already have an account ? <a href="./login.html" class="text-sm font-light">Login</a> </p>
+            <p class="text-sm text-black pt-2">Already have an account? <a href="./login.html" class="text-sm font-light">Login</a></p>
 
             <button onclick="signup()" class="bg-green-500 py-1 px-4 text-white rounded-md mt-4">Sign up</button>
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script>
+        function signup() {
+            // Get the values of the input fields
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Check if all fields are filled
+            if (name && email && password) {
+                // Redirect to the website if all fields are filled
+                window.location.href = "http://127.0.0.1:5500/index.html";
+            } else {
+                // Alert the user if some fields are empty
+                alert('Please fill all the fields.');
+            }
+        }
+    </script>
 </body>
 </html>
